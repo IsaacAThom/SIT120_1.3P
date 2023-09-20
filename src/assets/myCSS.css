@@ -1,0 +1,139 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');
+
+/* Background edited from https://www.deviantart.com/littlefiredragon/art/Tiling-Space-Background-446739823 */
+/* Backgrounds */
+body {
+    background: url(./stars.png);
+	background-attachment: fixed;
+}
+
+#app {
+    background: rgba(8, 3, 39, 0.9);
+    color: white;
+    font-family: Open Sans, sans-serif;
+    font-size: 14px;
+    box-shadow: 0px 0px 10px 5px rgb(240, 129, 96);
+    border: 1px solid rgb(248, 171, 96); 
+    text-align: center;
+    margin: 60px 20px;
+}
+/* Headers */
+h1 {
+    color: rgb(248, 171, 96);
+    font-family: Megrim, decorative;
+    border-bottom: 1px dashed rgb(255, 226, 119);
+    box-shadow: 0px 5px 12px -6px rgb(248, 171, 96);
+    padding: 20px 0px;
+    margin-top: 0px;
+    font-size: 64px;
+}
+
+h2 {
+    font-family: Megrim, decorative;
+    font-size: 32px;
+    color: rgb(248, 171, 96);
+    text-decoration: underline;
+}
+
+h3 {
+    font-family: Megrim, decorative;
+    color: rgb(248, 171, 96);
+    font-size: 24px;
+}
+/* Navigation */
+nav {
+    background: rgba(240, 129, 96, 0.5);
+    padding: 10px;
+    border: 1px solid rgb(248, 171, 96);
+    border-left-width: 0px;
+    border-right-width: 0px;
+    box-shadow: 0px 0px 20px -6px rgb(248, 171, 96);
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    column-gap: 50px;
+}
+/* Other Links */
+a {
+    color: rgb(248, 171, 96);
+}
+
+a:hover {
+    color: rgb(255, 226, 119);
+}
+/* list */
+li {
+    list-style: none;
+  }
+/* Footer */
+footer {
+    background: rgba(240, 129, 96, 0.5);
+    padding: 10px;
+    border: 1px solid rgb(248, 171, 96);
+    border-left-width: 0px;
+    border-right-width: 0px;
+    box-shadow: 0px 0px 20px -6px rgb(248, 171, 96);
+    margin-top: 20px;
+}
+/* 3 column grid */
+.grid-3-column {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% auto;
+    padding: 10px;
+}
+
+/* Grid Items */
+.grid-item {
+    background: rgba(213, 74, 87, 0.5);
+    border: 1px solid rgb(240, 129, 96);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 16px;
+    box-shadow: 0px 0px 8px 0px rgb(248, 171, 96);
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.grid-item:hover {
+    background: rgba(213, 74, 87, 0.6);
+    box-shadow: 0px 0px 20px 0px rgb(255, 226, 119);
+}
+/* affect every second grid item */
+.grid-item:nth-child(even) {
+    background: rgba(102, 45, 79, 0.5);
+}
+
+.grid-item:nth-child(even):hover {
+    background: rgba(102, 45, 79, 0.6);
+}
+
+.grid-item img {
+    max-width: 100%;
+}
+/* Grid item spanning 2 columns */
+.item1 {
+    grid-column: span 2;
+}
+/* Target the first h2 in the router-view to add extra padding between it and the nav bar */
+.view > h2:first-child {
+    padding-top: 15px;
+}
+
+/* For screen sizes below 800px */
+@media screen and (max-width: 800px) {
+    /* Convert navbar to one-column wide */
+    nav {
+        grid-template-columns: auto;
+        row-gap: 10px;
+    }
+    /* Convert column grid to 1 */
+    .grid-3-column {
+        grid-template-columns: auto;
+    }
+    /* double span now spans 1 */
+    .item1 {
+        grid-column: auto;
+    }
+}
